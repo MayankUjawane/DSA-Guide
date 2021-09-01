@@ -1,3 +1,9 @@
+# Introduction
+A tree is a frequently-used data structure to simulate a hierarchical tree structure.
+Each node of the tree will have a root value and a list of references to other nodes which are called child nodes.
+
+A **Binary Tree** is one of the most typical tree structure. As the name suggests, a binary tree is a tree data structure in which each node has **at most two children**, which are referred to as the left child and the right child.
+
 # Types of Trees
 ### `1. Full Binary Tree`
     A Binary Tree which has either 0 or 2 childrens.
