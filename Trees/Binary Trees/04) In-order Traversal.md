@@ -4,7 +4,7 @@ In-order traversal is to traverse the left subtree first. Then visit the root. F
 > ### `In-order Traversal using Recursion`
 ```java
 class Solution {
-    public List<Integer> preorderTraversal(TreeNode root) {
+    public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> inorder = new ArrayList<Integer>(); 
         dfs(root, inorder);
         return inorder; 
