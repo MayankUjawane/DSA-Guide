@@ -1,6 +1,8 @@
 #  Vertical Order Traversal of a Binary Tree
 Try to solve the question first [Vertical Order Traversal of a Binary Tree](https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/) with your own.
  
+> **`Hint`**   
+> Use **PriorityQueue**
 ```java 
 class Solution {
     private class Pair {
@@ -60,8 +62,8 @@ class Solution {
 }
 ```
 
-> `Time Complexity` **O(N(logN))**   
+> `Time Complexity` **O(NlogN)**   
 > `Space Complexity` **O(N)**   
 ---
      
-[Video Explanation](https://www.youtube.com/watch?v=8o-0CxZHNdQ&list=PL-Jc9J83PIiHgjQ9wfJ8w-rXU368xNX4L&index=16)
+Video Explanations -> [Vertical Order Traversal of a Binary Tree](https://www.youtube.com/watch?v=8o-0CxZHNdQ&list=PL-Jc9J83PIiHgjQ9wfJ8w-rXU368xNX4L&index=16), [Time Complexity](https://www.youtube.com/watch?v=KU2aFq6AsFA&list=PL-Jc9J83PIiHgjQ9wfJ8w-rXU368xNX4L&index=17), [Lambda Expression In PriorityQueue](https://www.youtube.com/watch?v=2kNeNVIdrQY&list=PL-Jc9J83PIiE_OazJYjhsaMXyWCf1DFCD&index=7) 
