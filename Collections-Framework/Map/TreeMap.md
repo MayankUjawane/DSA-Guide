@@ -68,3 +68,9 @@ TreeMap<Integer, String> treeMap = new TreeMap<>(Comparator.reverseOrder());
 
 A hash map does not guarantee the order of keys stored and specifically does not guarantee that this order will remain the same over time, but a tree map guarantees that 
 the keys will always be sorted according to the specified order.
+
+### Initialize TreeMap with Values
+>There is no built-in syntax for specifically initializing maps. However, you can take advantage of a special syntax known as **double brace initialization**. 
+```java
+Map<String, Integer> treeMap = new TreeMap<String, Integer>() {{ put("one", 1); put("two", 2); put("three", 3); }};
+```
