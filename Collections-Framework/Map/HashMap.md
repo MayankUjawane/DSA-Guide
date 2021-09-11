@@ -32,10 +32,10 @@ class HashMap {
     hashMap.put("Five", 5);
 
     //Print size of the HashMap
-    System.out.println("Size of map is:- " + map.size());
+    System.out.println("Size of hashMap is:- " + hashMap.size());
 
     //Printing elements in object of HashMap
-    System.out.println(map);
+    System.out.println(hashMap);
   
     //To remove any element we use remove method
     hashMap.remove("Three");
