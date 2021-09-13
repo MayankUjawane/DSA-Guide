@@ -80,7 +80,7 @@ class HashMap {
 ### Initialize HashMap with Values
 >There is no built-in syntax for specifically initializing maps. However, you can take advantage of a special syntax known as **double brace initialization**. 
 ```java
-Map<String, Integer> hashMap = new HashMap<String, String>() {{
+Map<String, Integer> hashMap = new HashMap<String, Integer>() {{
     put("one", 1); 
     put("two", 2);
 }};
