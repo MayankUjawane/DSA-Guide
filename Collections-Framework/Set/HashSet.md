@@ -14,19 +14,17 @@
 >* The initial default capacity of HashSet is 16, and the load factor is 0.75
 
 ### HashSet time complexity    
->* Read   : O(1)
->* Search : O(1)
->* Update : O(1)
->* Delete : O(1)
->* Add    : O(1)
+>* Add   : O(1)
+>* Remove : O(1)
+>* Contains : O(1)
+>* Size : O(1)
 
 ### Methods of HashSet
 ```java
 class HashSet {
-    // Create an empty hash map by declaring object of string and integer type
     HashSet<String> set = new HashSet();    
 
-    //For adding elements we use put method
+    //For adding elements we use add method
     set.add("Ravi");  
     set.add("Vijay");  
     set.add("Ajay");  
@@ -46,7 +44,7 @@ class HashSet {
     //Removing specific element from HashSet  
     set.remove("Ravi");  
     
-    HashSet<String> set1=new HashSet<String>();  
+    HashSet<String> set1 = new HashSet<String>();  
     set1.add("Ajay");  
     set1.add("Gaurav");  
     set.addAll(set1);    
@@ -62,6 +60,7 @@ class HashSet {
   
   
     //Java HashSet from another Collection
+    ArrayList<String> list = new ArrayList<String>();  
     list.add("Ravi");  
     list.add("Vijay");  
     list.add("Ajay");  
@@ -76,13 +75,13 @@ class HashSet {
 ```
 
 ### Initialize HashSet with Values
-1. **Using Another Collection Instance**
+* **Using Another Collection Instance**
 >We can pass an existing instance of another collection to initialize the Set.
 ```java
 Set<String> set = new HashSet<>(Arrays.asList("a", "b", "c"));
 ```
 
-2. **Using Anonymous Class**
+* **Using Anonymous Class**
 >Note the use of double curly braces is technically very **expensive** as it creates an anonymous class each time it's called.
 ```java
 Set<String> set = new HashSet<String>(){{
@@ -92,15 +91,16 @@ Set<String> set = new HashSet<String>(){{
 }};
 ```
 
-3. **Using Collections Utility Method Since Java 5**
+* **Using Collections Utility Method Since Java 5**
 >The Java's Collections utility class provides the method named **singleton** to create a Set with a **single element**. 
 >The Set instance created with the singleton method is **immutable** meaning that we cannot add more values to it.
 ```java
 Set<String> set = Collections.singleton("a");
 ```
 
-4. **Using Stream Since Java 8**
+* **Using Stream Since Java 8**
 >With the introduction of Stream API in Java 8, we can use **Stream with Collectors**.
 ```java
 Set<String> set = Stream.of("a", "b", "c").collect(Collectors.toCollection(HashSet::new));
 ```
+----
