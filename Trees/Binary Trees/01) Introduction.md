@@ -13,7 +13,7 @@ A **Binary Tree** is one of the most typical tree structure. As the name suggest
     * The last level has all nodes as left as possible.
     
 ### `3. Perfect Binary Tree`
-    All leaf nodes are at same level.
+    A Binary tree is a Perfect Binary Tree in which all the internal nodes have two children and all leaf nodes are at the same level.
     
 ### `4. Balanced Binary Tree`
     Tree which contains N number of nodes and has height upto log(N) then it is called Balanced Binary Tree.
