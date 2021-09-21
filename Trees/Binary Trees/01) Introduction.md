@@ -21,4 +21,5 @@ A **Binary Tree** is one of the most typical tree structure. As the name suggest
 ### `5. Degenerate Tree`
     Tree whose every node has a single children.
     
-For more reference [click here](https://www.geeksforgeeks.org/binary-tree-set-3-types-of-binary-tree/)
+For more reference [click here](https://www.geeksforgeeks.org/binary-tree-set-3-types-of-binary-tree/)     
+Video Explanation -> [Types of Trees](https://www.youtube.com/watch?v=_ANrF3FJm7I&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=2)
