@@ -95,6 +95,6 @@ Set<String> set = Collections.singleton("a");
 * **Using Stream Since Java 8**
 >With the introduction of Stream API in Java 8, we can use **Stream with Collectors**.
 ```java
-Set<String> set = Stream.of("a", "b", "c").collect(Collectors.toCollection(HashSet::new));
+Set<String> set = Stream.of("a", "b", "c").collect(Collectors.toCollection(LinkedHashSet::new));
 ```
 ----
