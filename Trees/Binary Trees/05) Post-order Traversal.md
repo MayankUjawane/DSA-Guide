@@ -25,50 +25,40 @@ class Solution {
 > ### `Post-order Traversal Iteratively`
 ```java
  class Solution {
-      public class Pair {
-          TreeNode node;
-          int state;
-          Pair(TreeNode node, int state) {
-              this.node = node;
-              this.state = state;
-          }
-      }
-    
-      public List<Integer> postorderTraversal(TreeNode root) {
-          List<Integer> list = new ArrayList();
-          Stack<Pair> st = new Stack();
-          if (root == null) return list;
-          Pair rootPair = new Pair(root, 1);
-          st.push(rootPair);
-
-          while (st.size() > 0) {
-              Pair top = st.peek();
-              if (top.state == 1) {
-                  //state=1 means we are in Pre-state (do state++ and move towards left child)
-                  top.state++;
-                  if (top.node.left != null) {
-                      Pair leftNode = new Pair(top.node.left, 1);
-                      st.push(leftNode);
-                  }
-              } else if (top.state == 2) {
-                  //state=2 means we are in In-state (do state++ and move towards right child)
-                  top.state++;
-                  if (top.node.right != null) {
-                      Pair rightNode = new Pair(top.node.right, 1);
-                      st.push(rightNode);
-                  }
-              } else {
-                  //state=3 means we are in Post-state (pop the node from the stack)
-                  list.add(top.node.val);
-                  st.pop();
-              }
-          }    
-          
-          return list;
-      }
+    private class Pair {
+        TreeNode node;
+        int state;
+        Pair(TreeNode node, int state) {
+            this.node = node;
+            this.state = state;
+        }
+    }
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList();
+        if (root == null) return list;
+        
+        Stack<Pair> st = new Stack();
+        st.push(new Pair(root, 1));
+        
+        while (st.size() > 0) {
+            Pair top = st.peek();
+            TreeNode node = top.node;
+            
+            if ((node.right == null && node.left == null) || top.state == 2) {
+                list.add(st.pop().node.val);
+                continue;
+            }
+            
+            if (node.right != null && top.state == 1) st.push(new Pair(node.right, 1));
+            if (node.left != null && top.state == 1) st.push(new Pair(node.left, 1));
+            
+            top.state = 2;
+        }
+        return list;
+    }
   }
 ```
-> `Time Complexity` **O(3N)** -> Because we are iterating each node for three times.     
+> `Time Complexity` **O(N)**     
 > `Space Complexity` **O(N)**    
 ----
 
