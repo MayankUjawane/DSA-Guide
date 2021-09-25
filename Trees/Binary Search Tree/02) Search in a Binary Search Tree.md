@@ -12,7 +12,7 @@ class Solution {
 }      
 ```
 > `Time Complexity` : **O(h)** ('h' is the height of BST)   
-> `Space Complexity` : **O(h)**    
+> `Space Complexity` : **O(1)**    
 ---
 Video Explanations -> [Search in a Binary Search Tree](https://www.youtube.com/watch?v=KcNt6v_56cc&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=41)  
 <hr>
