@@ -26,7 +26,7 @@ class Solution {
     }
 }      
 ```
-> `Time Complexity` : **O(1)** 'h' is the height of BST       
+> `Time Complexity` : **O(h)** 'h' is the height of BST       
 > `Space Complexity` : **O(1)**    
 ---
 Video Explanations -> [Insert into a Binary Search Tree](https://www.youtube.com/watch?v=FiFiNvM29ps&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=44)  
