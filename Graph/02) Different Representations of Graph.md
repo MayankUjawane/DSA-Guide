@@ -1,5 +1,5 @@
 # Representation of Grpah
-
+Watch this video [Graph Representation](https://www.youtube.com/watch?v=OffNesBSRA4&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=4)
 ## 1) Edge List
 >An edge list is a list or array of all the edges in a graph. Edge lists are one of the easier representations of a graph.
 >Each object inside the list will hold two things, node u and node v, indicating that an edge exists that connects node u with node v. 
