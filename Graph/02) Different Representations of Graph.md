@@ -1,7 +1,7 @@
 # Representation of Grpah
-Watch this video [Graph Representation](https://www.youtube.com/watch?v=OffNesBSRA4&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=4)  
+Watch this video [Graph Representation](https://www.youtube.com/watch?v=OffNesBSRA4&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=4)
 ## 1) Edge List
->An edge list is a list or array of all the edges in a graph. Edge lists are one of the easier representations of a graph.
+>An edge list is a **list or array of all the edges in a graph**. Edge lists are one of the easier representations of a graph.
 >Each object inside the list will hold two things, node u and node v, indicating that an edge exists that connects node u with node v. 
 >If the graph is weighted then each object will hold a piece of third information, which is the weight of the edge between nodes u and v.
 >
@@ -11,31 +11,30 @@ Watch this video [Graph Representation](https://www.youtube.com/watch?v=OffNesBS
 >***`This data structure is especially helpful with graphs that have a large number of nodes, but only a small number of edges.`***
 
 ## 2) Adjacency Matrix 
->Adjacency Matrix is a 2D array of size V x V where V is the number of vertices in a graph. 
->Let the 2D array be adj[][], a slot adj[i][j] = 1 indicates that there is an edge from vertex i to vertex j. Adjacency matrix for undirected graph is always symmetric. 
+>Adjacency Matrix is a 2D array of **size V x V** where V is the **number of vertices in a graph**. 
+>Let the 2D array be adj[][], a slot adj[i][j]=1 indicates that there is an edge from vertex i to vertex j. Adjacency matrix for **undirected graph is always symmetric**. 
 >Adjacency Matrix is also used to represent weighted graphs. If adj[i][j] = w, then there is an edge from vertex i to vertex j with weight w. 
 >
 > ![Undirected Graph](https://www.softwaretestinghelp.com/wp-content/qa/uploads/2020/05/4-5.png) 
 > ![Directed Weighted Graph](https://www.softwaretestinghelp.com/wp-content/qa/uploads/2020/05/6-3.png)
-> 
-> 
+>  
 >***`Adjacency matrices are helpful when we need to quickly find whether two nodes are adjacent (connected) or not. The adjacency matrix is a 2D boolean array of a size V^2.`***
 
 ## 3) Adjacency List
->An array of lists is used. The size of the array is equal to the number of vertices. Let the array be an array[]. An entry array[i] represents the list of vertices 
+>An **array of lists** is used. The size of the array is equal to the number of vertices. Let the array be an array[]. An entry array[i] represents the list of vertices 
 >adjacent to the ith vertex. This representation can also be used to represent a weighted graph. The weights of edges can be represented as lists of pairs. Following is 
 >the adjacency list representation of the above graph. 
 >
 > ![Undirected Graph](https://www.softwaretestinghelp.com/wp-content/qa/uploads/2020/05/7-6.png)
 > ![Directed Graph](https://www.softwaretestinghelp.com/wp-content/qa/uploads/2020/05/9-1.png) 
-> 
+
 
 # Complexity
 >With graph data structures, we usually pay attention to the following complexities:           
 > ### Space Complexity 
 >The approximate amount of memory needed to store a graph in the chosen data structure.        
 >
-> ### Time Complexity
+>### Time Complexity
 > * **Connection Checking Complexity:** The approximate amount of time needed to find whether two different nodes are neighbors or not.
 > * **Neighbors Finding Complexity:** The approximate amount of time needed to find all the neighboring nodes of some goal node.
 >We call two different nodes **“neighboring nodes”** if there’s an edge that connects the first node with the second.
