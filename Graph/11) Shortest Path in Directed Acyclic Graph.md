@@ -1,5 +1,7 @@
 # Shortest Path in Directed Acyclic Graph (DAG)
-> 
+> In topological sorting of a graph the vertices which have fewer dependencies are printed before the vertices which have relatively greater dependencies. Idea is to traverse
+> through the vertices of graph according to topological sorting of the graph because of this for every node, the nodes on which they depends will already get traversed before
+> them.
 
 ```java
 private class Pair {
@@ -43,8 +45,11 @@ class Main {
             distance[i] = Integer.MAX_VALUE;
         
         distance[src] = 0;
+        //stack contains the topological sorting of graph
         while(!st.isEmpty()) {
             int node = st.pop();
+            // for the nodes which occur before source node in topological order can not be reached therefore for them 
+            // distance[node] is equal to Integer.MAX_VALUE
             // if node has been reached previously then distance[node] will not be equal to Integer.MAX_VALUE
             if(distance[node] != Integer.MAX_VALUE;) {
                 for(Pair neighbour: adj.get(node)) {
