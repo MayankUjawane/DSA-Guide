@@ -4,7 +4,7 @@
 > Idea is to traverse through the vertices of graph according to topological sorting of the graph because of this for every
 > node, the nodes on which they depends will already get traversed before them.
 ```java
-private class Pair {
+class Pair {
     int value;
     int weight;
     Pair(int value, int weight) {
