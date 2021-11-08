@@ -4,15 +4,16 @@
 > them.
 
 ```java
-private class Pair {
-    int value;
-    int weight;
-    Pair(int value, int weight) {
-        this.value = value;
-        this.weight = weight;
-    }
-}
 class Main {
+    private class Pair {
+        int value;
+        int weight;
+        Pair(int value, int weight) {
+            this.value = value;
+            this.weight = weight;
+        }
+    }
+    
     public static void main(String args[]) {
         int n = 6;
         ArrayList<ArrayList<Pair>> adj = new ArrayList<ArrayList<Pair>>();
@@ -31,6 +32,7 @@ class Main {
         Main obj = new Main();
         obj.shortestPath(0, adj, n);
     }
+    
     public void shortestPath(int src, ArrayList<ArrayList<Pair>> adj, int N) {
         Stack<Integer> st = new Stack();
         boolean[] visited = new boolean[N];
@@ -60,6 +62,7 @@ class Main {
             }
         }
     }
+    
     public void topologicalSort(int node, ArrayList<ArrayList<Integer>> adj, boolean visited[], Stack<Integer> st) {
         visited[node] = true;
         for(Pair neighbour: adj.get(node)) {
