@@ -4,14 +4,13 @@
 > all other nodes. This algorithm is also known as the **single-source shortest path algorithm**.
 
 ```java
-private class Pair implements Comparable<Pair> {
+class Pair implements Comparable<Pair> {
     int value;
     int weight;
     Pair(int value, int weight) {
         this.value = value;
         this.weight = weight;
     }
-  
     public int compareTo(Pair o) {
         return (this.weight - o.weight);
     }
