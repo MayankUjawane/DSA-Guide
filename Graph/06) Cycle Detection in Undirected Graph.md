@@ -4,15 +4,16 @@
 
 ### Using BFS
 ```java
-private class Pair {
-    int node;
-    int parent;
-    public Node(int node, int parent) {
-        this.node = node;
-        this.parent = parent;
-    }
-}
 class Solution {
+    private class Pair {
+        int node;
+        int parent;
+        public Node(int node, int parent) {
+            this.node = node;
+            this.parent = parent;
+        }
+    }
+    
     public boolean isCycle(int V, ArrayList<ArrayList<Integer> adj) {
         boolean visited[] = new boolean[V+1];
         for(int i=1; i<=V; i++) {
