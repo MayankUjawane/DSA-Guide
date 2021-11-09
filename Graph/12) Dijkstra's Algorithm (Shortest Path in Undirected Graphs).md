@@ -2,6 +2,7 @@
 > **Dijkstra's algorithm** is an algorithm for finding the **shortest paths** between nodes in a graph, which may represent, for example, road networks.
 > **Dijkstra's algorithm** makes use of weights of the edges for finding the path that minimizes the total distance (weight) among the source node and
 > all other nodes. This algorithm is also known as the **single-source shortest path algorithm**.
+> Dijkstra's Algorithm is unable to handle **negative edges**.
 
 ```java
 class Pair implements Comparable<Pair> {
@@ -17,7 +18,7 @@ class Pair implements Comparable<Pair> {
 }
 class Main {
     public static void main(String args[]) {
-        int n = 6;
+        int n = 5;
         ArrayList<ArrayList<Pair>> adj = new ArrayList<ArrayList<Pair>>();
         
         for(int i=0; i<n; i++)
@@ -76,3 +77,22 @@ class Main {
 Video Explanations -> (Dijkstra's Algorithm | Shortest Path in Undirected Graphs) [Striver](https://www.youtube.com/watch?v=jbhuqIASjoM&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=18), 
 [Pepcoding](https://www.youtube.com/watch?v=sD0lLYlGCJE&list=PL-Jc9J83PIiHfqDcLZMcO9SsUDY4S3a-v&index=15)
 <hr>
+
+### Applications of Dijkstra’s Shortest Path Algorithm
+> Dijkstra’s algorithm is one of the most popular algorithms for solving many single-source shortest path problems having non-negative edge weight in the graphs i.e., 
+> it is to find the shortest distance between two vertices on a graph.
+> Dijkstra’s Algorithm has several real-world use cases, some of which are as follows:
+> * **Digital Mapping Services in Google Maps:** Many times we have tried to find the distance in G-Maps, from your location to the nearest desired location. 
+> There encounters the Shortest Path Algorithm, as there are various routes/paths connecting them but it has to show the minimum distance, so Dijkstra’s Algorithm is used.
+> * **Social Networking Applications:** In many applications you might have seen the app suggests the list of friends that a particular user may know. The standard Dijkstra
+> algorithm can be applied using the shortest path between users measured through connections among them.
+> * **IP routing to find Open shortest Path First:** Open Shortest Path First (OSPF) is a link-state routing protocol that is used to find the best path between the source 
+> and the destination router using its own Shortest Path First. Dijkstra’s algorithm is widely used in the routing protocols required by the routers to update their 
+> forwarding table. The algorithm provides the shortest cost path from the source router to other routers in the network.
+> * **Telephone Network:** As we know, in a telephone network, each line has a bandwidth, ‘b’. The bandwidth of the transmission line is the highest frequency that that line 
+> can support. Generally, if the frequency of the signal is higher in a certain line, the signal is reduced by that line. Bandwidth represents the amount of information that 
+> can be transmitted by the line. If we imagine a city to be a graph, the vertices represent the switching stations, and the edges represent the transmission lines and 
+> the weight of the edges represents ‘b’. So as you can see it can fall into the category of shortest distance problem, for which the Dijkstra is can be used.
+> 
+> Wherever addressing the need for shortest path explications either in the domain of robotics, transport, embedded systems, laboratory or production plants, etc, this 
+> algorithm is applied.
