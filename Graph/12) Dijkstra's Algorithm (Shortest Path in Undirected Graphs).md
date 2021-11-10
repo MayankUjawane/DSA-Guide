@@ -5,18 +5,12 @@
 > Dijkstra's Algorithm is unable to handle **negative edges**.
 
 ```java
-class Pair implements Comparable<Pair> {
-    int value;
-    int weight;
-    Pair(int value, int weight) {
-        this.value = value;
-        this.weight = weight;
-    }
-    public int compareTo(Pair o) {
-        return (this.weight - o.weight);
-    }
-}
 class Main {
+    class Pair {
+        int val;
+        int weight;
+        Pair(
+    }
     public static void main(String args[]) {
         int n = 5;
         ArrayList<ArrayList<Pair>> adj = new ArrayList<ArrayList<Pair>>();
@@ -46,6 +40,18 @@ class Main {
         obj.shortestPath(0, adj, n);
     }
   
+    private class Pair implements Comparable<Pair> {
+        int value;
+        int weight;
+        Pair(int value, int weight) {
+            this.value = value;
+            this.weight = weight;
+        }
+        public int compareTo(Pair o) {
+            return (this.weight - o.weight);
+        }
+    }
+  
     public void shortestPath(int src, ArrayList<ArrayList<Pair>> adj, int N) {
         int[] distance = new int[N];
         for(int i=0; i<N; i++)
@@ -60,13 +66,46 @@ class Main {
             for(Pair neighbour: adj.get(node.value)) {
                 if(distance[node.value] + neighbour.weight < distance[neighbour.value]) {
                     distance[neighbour.value] = distance[node.value] + neighbour.weight;
-                    pq.offer(new Pair(neighbour.value, distance[neighbour.value]));
+                    pq.offer(new Pair1(neighbour.value, distance[neighbour.value]));
                 }
             }
         }
                
         for(int i=0; i<N; i++) {
             System.out.println(src + " -> " + i + " = " + distance[i]);  
+        }  
+    }
+    
+    class Node2 implements Comparable<Node2> {
+        int value;
+        String psf;
+        int wsf;
+        Node2(int value, String psf, int wsf) {
+            this.value = value;
+            this.psf = psf;
+            this.wsf = wsf;
+        }
+        public int compareTo(Node2 o) {
+            return (this.wsf - o.wsf);
+        }
+    }
+    
+    public void shortestPath2(int src, ArrayList<ArrayList<Pair>> adj, int N) {
+        boolean[] visited = new boolean[N];
+        PriorityQueue<Node2> pq = new PriorityQueue<>();
+        pq.add(new Node2(src, src + "", 0);
+      
+        while(!pq.isEmpty()) {
+            Node2 node = pq.poll();
+            if(!visited[node.value]) {
+                visited[node.value] = true;
+                System.out.println(node.value + " via " + node.psf + " @ " + node.wsf);
+                for(Pair neighbour: adj.get(node.value)) {
+                    if(!visited[node.value]) {
+                        pq.offer(new Node2(neighbour.value, node.psf + neighbour.value, node.wsf + neighbour.weight));
+                    }
+                }
+            }
         }  
     }
 }
