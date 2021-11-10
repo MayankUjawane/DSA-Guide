@@ -57,10 +57,10 @@ class Main {
           key[0] = 0;
           pq.offer(new Pair(0, key[0]));
           
-          for(int i=0; i<N; i++) {
+          while(!pq.isEmpty()) {
               int u = pq.poll().value;
+              if(mstSet[u] == true) continue;
               mstSet[u] = true;
-              
               for(Pair neighbour: adj.get(u)) {
                   if(mstSet[neighbour.value] == false && neighbour.weight < key[neighbour.value]) {
                       parent[neighbour.value] = u;
@@ -70,8 +70,43 @@ class Main {
               }
           }
           
-          for(int i=0; i<N; i++) {
-              System.out.println(parent[i] + " - " + i);
+          for(int i=1; i<N; i++) {
+              System.out.println(parent[i] + "->" + i);
+          }
+    }
+    
+    class Node implements Comparable<Node> {
+        int value;
+        int parent;
+        int weight;
+        Node(int value, int weight) {
+            this.value = value;
+            this.parent = parent;
+            this.weight = weight;
+        }
+        public int compareTo(Node o) {
+            return (this.weight - o.weight);
+        }
+    }
+    
+    public void primsAlgo2(ArrayList<ArrayList<Pair>> adj, int N) {
+          boolean visited[] = new boolean[N];
+          PriorityQueue<Node> pq = new PriorityQueue<>();
+          pq.offer(new Node(0, -1, 0));
+          
+          while(!pq.isEmpty()) {
+              Node node = pq.poll();
+              if(!visited[node.value]) {
+                  visited[node.value] = true;
+                  if(node.parent != -1) {
+                      System.out.println(node.parent + "->" + node.value + "@" + node.weight);
+                  }
+                  for(Pair neighbour: adj.get(node.value)) {
+                      if(!visited[neighbour.value]) {
+                          pq.offer(new Node(neighbour.value, node.value, neighbour.weight));
+                      }
+                  }
+              }
           }
     }
 }
@@ -79,5 +114,7 @@ class Main {
 > `Time Complexity` : **O((V + E)(log V))**, where V is the number of nodes and E is the number of edges.   
 > `Space Complexity` : **O(N) + O(N) + O(N) + O(N)**, for priority queue, key array, parent array and mstSet array.    
 ---
-Video Explanations -> [Prim's Algorithm](https://www.youtube.com/watch?v=8KPEROaLK-0&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=22)  
+Video Explanations -> Prim's Algorithm -> [Pepcoding](https://www.youtube.com/watch?v=Vw-sktU1zmc&list=PL-Jc9J83PIiHfqDcLZMcO9SsUDY4S3a-v&index=16), 
+Striver- [Intuition](https://www.youtube.com/watch?v=HnD676J56ak&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=21),
+[Java Code](https://www.youtube.com/watch?v=8KPEROaLK-0&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=22)
 <hr>
