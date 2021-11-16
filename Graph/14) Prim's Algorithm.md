@@ -1,6 +1,14 @@
-### Prim's Algorithm
+# Prim's Algorithm
 > Prim’s Algorithm use Greedy approach to find the minimum spanning tree. In Prim’s Algorithm we grow the spanning tree from a starting position. 
 > We add vertex to the growing spanning tree in Prim's algorithm.
+> 
+> Consider the example below:
+> ![Image](https://he-s3.s3.amazonaws.com/media/uploads/16597fe.jpg)    
+> In Prim’s Algorithm, we will start with an arbitrary node (it doesn’t matter which one) and mark it. In each iteration we will mark a new vertex that is adjacent to the 
+> one that we have already marked. As a greedy algorithm, Prim’s algorithm will select the cheapest edge and mark the vertex. So we will simply choose the edge with weight 1. 
+> In the next iteration we have three options, edges with weight 2, 3 and 4. So, we will select the edge with weight 2 and mark the vertex. Now again we have three options,
+> edges with weight 3, 4 and 5. But we can’t choose edge with weight 3 as it is creating a cycle. So we will select the edge with weight 4 and we end up with the minimum
+> spanning tree of total cost 7 ( = 1 + 2 + 4).
 
 ```java
 class Pair implements Comparable<Pair> {
@@ -111,10 +119,11 @@ class Main {
     }
 }
 ```
-> `Time Complexity` : **O((V + E)(log V))**, where V is the number of nodes and E is the number of edges.   
+### Complexities:
+> `Time Complexity` of the Prim’s Algorithm is **O((V + E)(log V))**(where V is the number of nodes and E is the number of edges) because each vertex is inserted in the 
+> priority queue only once and insertion in priority queue take logarithmic time.      
 > `Space Complexity` : **O(N) + O(N) + O(N) + O(N)**, for priority queue, key array, parent array and mstSet array.    
 ---
 Video Explanations -> Prim's Algorithm -> [Pepcoding](https://www.youtube.com/watch?v=Vw-sktU1zmc&list=PL-Jc9J83PIiHfqDcLZMcO9SsUDY4S3a-v&index=16), 
-Striver- [Intuition](https://www.youtube.com/watch?v=HnD676J56ak&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=21),
-[Java Code](https://www.youtube.com/watch?v=8KPEROaLK-0&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=22)
-<hr>
+Striver- [Intuition](https://www.youtube.com/watch?v=HnD676J56ak&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=21)
+<hr> 
