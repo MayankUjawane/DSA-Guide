@@ -29,7 +29,7 @@ class Main {
     }
   
     public void findBridges(ArrayList<ArrayList<Integer>> adj, int N) {
-        int vis[] = new int[N];
+        boolean vis[] = new boolean[N];
         int disc[] = new int[N]; //discover time
         int low[] = new int[N];  //low time
         int time = 0;
@@ -40,7 +40,7 @@ class Main {
         }
     }
   
-    public void dfs(int node, int parent, int[] vis, int[] disc, int[] low, int time, ArrayList<ArrayList<Integer>> adj) {
+    public void dfs(int node, int parent, boolean[] vis, int[] disc, int[] low, int time, ArrayList<ArrayList<Integer>> adj) {
         vis[node] = true;
         disc[node] = low[node] = time++;
         
