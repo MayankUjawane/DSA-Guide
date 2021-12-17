@@ -2,15 +2,11 @@
 > **Dijkstra's algorithm** is an algorithm for finding the **shortest paths** between nodes in a graph, which may represent, for example, road networks.
 > **Dijkstra's algorithm** makes use of weights of the edges for finding the path that minimizes the total distance (weight) among the source node and
 > all other nodes. This algorithm is also known as the **single-source shortest path algorithm**.
-> Dijkstra's Algorithm is unable to handle **negative edges**.
+> Dijkstra's Algorithm is unable to handle **negative edges**.      
+> You can use **Dijkstra's algorithm in both directed and undirected graphs**.
 
 ```java
 class Main {
-    class Pair {
-        int val;
-        int weight;
-        Pair(
-    }
     public static void main(String args[]) {
         int n = 5;
         ArrayList<ArrayList<Pair>> adj = new ArrayList<ArrayList<Pair>>();
@@ -59,14 +55,14 @@ class Main {
         
         distance[src] = 0;
         PriorityQueue<Pair> pq = new PriorityQueue<>();
-        pq.add(new Pair(src, 0);
+        pq.add(new Pair(src, 0));
       
         while(!pq.isEmpty()) {
             Pair node = pq.poll();
             for(Pair neighbour: adj.get(node.value)) {
                 if(distance[node.value] + neighbour.weight < distance[neighbour.value]) {
                     distance[neighbour.value] = distance[node.value] + neighbour.weight;
-                    pq.offer(new Pair1(neighbour.value, distance[neighbour.value]));
+                    pq.offer(new Pair(neighbour.value, distance[neighbour.value]));
                 }
             }
         }
