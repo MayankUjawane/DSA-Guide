@@ -62,7 +62,7 @@ class Main {
                 }
             }
         }
-        if((parent != -1) && (child > 1)) isArticulation[node] = true; //for the starting node
+        if((parent == -1) && (child > 1)) isArticulation[node] = true; //for the starting node
     }  
 }
 ```
