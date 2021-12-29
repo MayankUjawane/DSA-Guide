@@ -12,8 +12,7 @@ class Solution {
             this.y = y;
         }
     }
-    public int[][] updateMatrix(int[][] mat) {
-        int[][] matrix = mat;
+    public int[][] updateMatrix(int[][] matrix) {
         Queue<Coordinates> q = new LinkedList<>();
         // convert all 1 to -1 so that we can use -1 as unvisited and add all 0 to the list so that  
         // we can apply multisource BFS from all 0.
@@ -42,7 +41,6 @@ class Solution {
                 }
             }
         }
-        
         return matrix;
     }
 }     
