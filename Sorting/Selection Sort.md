@@ -27,7 +27,9 @@ void sort(int arr[]) {
 > `Auxiliary Space` : **O(1)**    
 > `In Place` : **Yes**, it does not require extra space.        
 > `Sorting In Place` : **Yes**           
-> `Stable` : **No**, The default implementation is not stable. However it can be made stable.    
+> `Stable` : **No**, The default implementation is not stable. However it can be made stable.     
+> 
+> **The good thing about selection sort is it never makes more than 'n' swaps and can be useful when memory write is a costly operation.**
 ---
 Video Explanations -> [Selection Sort](https://www.youtube.com/watch?v=xWBP4lzkoyM) 
 <hr>
