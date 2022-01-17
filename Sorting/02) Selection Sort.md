@@ -31,5 +31,5 @@ void sort(int arr[]) {
 > 
 > **The good thing about selection sort is it never makes more than 'n' swaps and can be useful when memory write is a costly operation.**
 ---
-Video Explanations -> [Selection Sort](https://www.youtube.com/watch?v=xWBP4lzkoyM) 
+Video Explanations -> Selection Sort - [Pepcoding](https://youtu.be/EU9FIt1t-Is?list=PL-Jc9J83PIiFc7hJ5eeCb579PS8p-en4f), [GFG](https://www.youtube.com/watch?v=xWBP4lzkoyM) 
 <hr>
