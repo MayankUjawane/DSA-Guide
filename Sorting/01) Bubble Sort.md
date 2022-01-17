@@ -28,5 +28,5 @@ void bubbleSort(int arr[]) {
 > `Sorting In Place` : **Yes**           
 > `Stable` : **Yes**   
 ---
-Video Explanations -> [Bubble Sort](https://youtu.be/nmhjrI-aW5o) 
+Video Explanations -> Bubble Sort - [Pepcoding](https://youtu.be/Jv-eGC2xmtU?list=PL-Jc9J83PIiFc7hJ5eeCb579PS8p-en4f), [GFG](https://youtu.be/nmhjrI-aW5o) 
 <hr>
