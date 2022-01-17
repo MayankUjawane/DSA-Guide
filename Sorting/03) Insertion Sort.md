@@ -27,5 +27,5 @@ void insertionSort(int arr[]) {
 > `Stable` : **Yes**          
 > `Uses` : Insertion sort is used when number of elements is **small**. It can also be useful when input array is **almost sorted**, only few elements are misplaced in complete big array.        
 ---
-Video Explanations -> [Insertion Sort](https://www.youtube.com/watch?v=OGzPmgsI-pQ) 
+Video Explanations -> Insertion Sort - [Pepcoding](https://youtu.be/MMt2x6an_i8?list=PL-Jc9J83PIiFc7hJ5eeCb579PS8p-en4f), [GFG](https://www.youtube.com/watch?v=OGzPmgsI-pQ) 
 <hr>
