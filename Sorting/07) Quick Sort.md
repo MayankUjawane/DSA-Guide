@@ -1,4 +1,4 @@
-# Partitioning an Array
+# Quick Sort
 ### Method 1
 ```java
 class QuickSort {
