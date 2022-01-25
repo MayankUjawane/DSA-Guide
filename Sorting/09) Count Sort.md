@@ -60,7 +60,7 @@ class CountSort {
 }
 ```
 > `Time Complexity` : **O(n+k)**, where n is the number of elements in the array and k is the range of the elements.    
-> `Auxiliary Space` : **O(k)**, k is the range of the elements.       
+> `Auxiliary Space` : **O(n+k)**, n is the length of array and k is the range of the elements.       
 > Larger the range of elements in the given array, larger is the space complexity, hence space complexity of counting sort is bad if the
 > range of integers are very large as the auxiliary array of that size has to be made.         
 > `Stable` : **Yes** 
