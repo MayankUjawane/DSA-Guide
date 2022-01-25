@@ -15,6 +15,7 @@ class CountSort {
     public static void countSort(int[] arr) {
         // finding min and max elements 
         int min=arr[0], max=arr[0];
+        // T.C. of this loop -> O(n)
         for(int val: arr) {
             min = Math.min(min, val);
             max = Math.max(max, val);
@@ -22,7 +23,9 @@ class CountSort {
         
         // creating frequency array to store frequency of each element
         int range = max-min+1;
+        // Auxiliary Space -> O(k), where k is the range of the elements
         int[] freq = new int[range];
+        // T.C. of this loop -> O(n)
         for(int val: arr) {
             int ind = val-min;
             freq[ind]++; 
@@ -30,6 +33,7 @@ class CountSort {
         
         // converting frequency array to prefix sum array so that freq[i] 
         // now contains actual position of each element in output array
+        // T.C. of this loop -> O(k), where k is the range of the elements
         for(int i=1; i<freq.length; i++) {
             freq[i] = freq[i] + freq[i-1];
         }
@@ -37,6 +41,7 @@ class CountSort {
         // Build the output character array
         int[] output = new int[arr.length];
         // To make count sort stable we are operating in reverse order.
+        // T.C. of this loop -> O(n)
         for(int i=arr.length-1; i>=0; i--) {
             int element = arr[i];
             int freqIndex = element-min;
@@ -47,6 +52,7 @@ class CountSort {
         }
         
         // Store the sorted elements into main array 
+        // T.C. of this loop -> O(n)
         for (int i = 0; i < arr.length; i++) {
             arr[i] = output[i];
         }
