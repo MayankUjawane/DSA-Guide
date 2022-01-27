@@ -1,3 +1,6 @@
+# What is Arrays?
+> [Introduction to Arrays](https://youtu.be/RdcvXoM3ZYM?list=PL-Jc9J83PIiHOV7lm2uSw4ZiVsIRsGS6r)     
+> [Arrays-Memory](https://youtu.be/QolHb2UaFJc?list=PL-Jc9J83PIiHOV7lm2uSw4ZiVsIRsGS6r)
 # Bar Chart
 Question -> [Bar Chart](https://www.pepcoding.com/resources/online-java-foundation/function-and-arrays/bar-chart-official/ojquestion)    
 
