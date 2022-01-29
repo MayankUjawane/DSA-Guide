@@ -29,9 +29,9 @@ class MergeSort {
           
         /* copy data to temp arrays */  
         for (int i = 0; i < n1; i++)    
-        LeftArray[i] = arr[beg + i];    
+            LeftArray[i] = arr[beg + i];    
         for (int j = 0; j < n2; j++)    
-        RightArray[j] = arr[mid + 1 + j];    
+            RightArray[j] = arr[mid + 1 + j];    
           
         int i = 0; /* initial index of first sub-array */  
         int j = 0; /* initial index of second sub-array */   
