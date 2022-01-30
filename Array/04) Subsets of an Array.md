@@ -2,7 +2,7 @@
 > A subsequence is a sequence that can be derived from another sequence by removing zero or more elements, without changing the order of the remaining elements.     
 >  For example, consider the array [1, 2, 3, 4], there are 15 non-empty sub-sequences. They are (1), (2), (3), (4), (1,2), (1,3),(1,4), (2,3), (2,4), (3,4), (1,2,3), (1,2,4), 
 >  (1,3,4), (2,3,4), (1,2,3,4).      
->  More generally, we can say that for a **sequence of size n, we have (2^n) sub-sequences in total** in which **(2^n-1) are non-empty sub-sequences**.       
+>  More generally, we can say that for a **sequence of size n, we have (2^n) sub-sequences in total** in which **(2^n - 1) are non-empty sub-sequences**.       
 >  
 > Question -> [Subsets of an Array](https://www.pepcoding.com/resources/online-java-foundation/function-and-arrays/subsets-of-array-official/ojquestion)    
 
