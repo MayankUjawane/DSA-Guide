@@ -5,6 +5,29 @@
 >   
 > Question -> [Subarrays of an Array](https://www.pepcoding.com/resources/online-java-foundation/function-and-arrays/subarray-problem-official/ojquestion)
 
+### Iterative (Print length wise subarray)
+```java
+public class Solution{
+    public void printSubArrays(int[] arr, int n) {
+        // Length of sub-array
+        for (int length=1; length<=n; length++) {
+            // Starting Index
+            for (int start=0; start<=n-length; start++)  {
+                // Ending Index
+                int end = start + length - 1;
+                // Print subarray between current starting and ending index
+                for (int k=start; k<=end; k++) {
+                    System.out.print(arr[k]+" ");
+                }
+                System.out.println();
+            }
+        }
+    }
+}
+```
+> `Time Complexity` : **O(n^3)**       
+> `Space Complexity` : **O(1)**
+---
 ### Iterative
 ```java
 public class Solution{
