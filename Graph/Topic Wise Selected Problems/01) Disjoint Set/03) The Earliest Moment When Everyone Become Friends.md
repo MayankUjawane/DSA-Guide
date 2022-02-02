@@ -1,5 +1,5 @@
 # The Earliest Moment When Everyone Become Friends
-Question -> [The Earliest Moment When Everyone Become Friends](https://www.programmerall.com/article/2898772884/)    
+Question -> [The Earliest Moment When Everyone Become Friends](https://www.codingninjas.com/codestudio/problems/the-earliest-moment-when-everyone-become-friends_1376604)    
 
 ### Implementation
 ```java
