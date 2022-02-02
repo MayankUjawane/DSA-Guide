@@ -45,8 +45,8 @@ public class Solution {
             return root[x] = find(root[x]);
         }
         public void union(int x, int y, int timestamp) {
-            int rootX = root[x];
-            int rootY = root[y];
+            int rootX = find(x);
+            int rootY = find(y);
             if(rootX != rootY) {
                 if(rank[rootX] > rank[rootY]) {
                     root[rootY] = rootX;
