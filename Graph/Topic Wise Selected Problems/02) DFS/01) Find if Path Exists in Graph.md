@@ -20,7 +20,7 @@ class Solution {
             graph.get(u).add(v);
             graph.get(v).add(u);
         }
-        // dfs will take T.C.-> O(E), since we running loop only for edges and S.C.-> O(V) for vertices
+        // dfs will take T.C.-> O(V+E) and S.C.-> O(V) for vertices
         return dfs(graph, vis, source, destination);
     }
     public boolean dfs(ArrayList<ArrayList<Integer>> graph, boolean[] vis, int s, int d) {
@@ -62,7 +62,10 @@ class Solution {
         // S.C.-> O(V), where V = n = number of vertices
         boolean visited[] = new boolean[n];
         
-        // In total loop will run for O(E) times
+        // In the while loop, at most, we will visit vertex once.
+        // The for loop inside the while loop will have a cumulative sum of at most E iterations 
+        // since it will iterate over all of the node's neighbors for each node.
+        // In total loop will run for O(V+E) times
         while (!stack.isEmpty()) {
             int node = stack.pop();
             // Check if we have reached the target node.
