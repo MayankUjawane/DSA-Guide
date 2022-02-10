@@ -25,7 +25,10 @@ class Solution {
         q.offer(start);
         visited[start] = true;
         
-        // In total this loop will run for O(E) times
+        // In the while loop, at most we will visit vertex once.
+        // The for loop inside the while loop will have a cumulative sum of at most E iterations
+        // since it will iterate over all of the node's neighbors for each node.
+        // In total this loop will run for O(V+E) times
         while (!q.isEmpty()) {
             int node = q.poll();
             // Add all unvisited neighbors to the queue.
