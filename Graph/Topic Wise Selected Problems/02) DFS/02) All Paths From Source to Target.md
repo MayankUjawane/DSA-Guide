@@ -11,8 +11,6 @@ class Solution {
             return paths;
         }
 
-        // T.C.-> O(V+E)
-        // S.C.-> O(V) since dfs can go deep till all vertices so maximum recursion stack will take O(V)
         dfs(graph, 0, new ArrayList<>(), paths);
         return paths;
     }
@@ -33,6 +31,11 @@ class Solution {
     }
 }
 ```
-> `Time Complexity` : **O(V+E)**     
-> `Space Complexity` : **O(V)**
+> `Time Complexity` : **O((2^V)\*V)**, where V represents the number of vertices.   
+> * For a directed acyclic graph (DAG) with V vertices, there could be at most **2^{V - 1} - 1** possible paths to go from the starting vertex to the target vertex. We need **O(V)** time to build each such path.
+> * Therefore, a loose upper bound on the time complexity would be **(2^{V - 1} - 1) \* O(V) = O(2^V \* V)**.          
+> * Since we have overlapping between the paths, the actual time spent on the traversal will be lower to some extent.        
+> 
+> `Space Complexity` : **O(V)**   
+> * The recursion depth can be no more than **V**, and we need **O(V)** space to store all the previously visited vertices while recursively traversing deeper with the current path. Please note that we don't count the space usage for the output, i.e., to store all the paths we obtained.
 ---
