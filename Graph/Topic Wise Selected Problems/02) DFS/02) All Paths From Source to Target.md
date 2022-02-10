@@ -11,7 +11,7 @@ class Solution {
             return paths;
         }
 
-        // T.C.-> O(E) since loop will only for edges
+        // T.C.-> O(V+E)
         // S.C.-> O(V) since dfs can go deep till all vertices so maximum recursion stack will take O(V)
         dfs(graph, 0, new ArrayList<>(), paths);
         return paths;
@@ -33,6 +33,6 @@ class Solution {
     }
 }
 ```
-> `Time Complexity` : **O(E)**     
+> `Time Complexity` : **O(V+E)**     
 > `Space Complexity` : **O(V)**
 ---
