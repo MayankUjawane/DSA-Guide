@@ -28,16 +28,16 @@ class Solution {
         // In total this loop will run for O(E) times
         while (!q.isEmpty()) {
             int node = q.poll();
-            visited[node] = true;
             // Add all unvisited neighbors to the queue.
             for (int neighbor : graph.get(node)) {
                 if(neighbor == end) return true;
                 if(!visited[neighbor]) {
                     q.offer(neighbor);
+                    visited[node] = true;
                 }
             }
         }
-        // No path between start and end
+        // No path exists between start and end
         return false;
     }
 }
