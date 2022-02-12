@@ -1,7 +1,7 @@
 # Min Cost to Connect All Points
 Question -> [Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points/)    
 
-### Implementation
+### Using Kruskal's Algorithm
 ```java
 class Solution {
     private class Edge implements Comparable<Edge> {
