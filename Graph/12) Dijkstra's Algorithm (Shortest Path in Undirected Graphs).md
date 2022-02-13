@@ -59,10 +59,11 @@ class Main {
       
         while(!pq.isEmpty()) {
             Pair node = pq.poll();
+            if(distance[node.value] < node.weight) {
+                continue;
+            }
+                
             for(Pair neighbour: adj.get(node.value)) {
-                if(distance[node.value] == Integer.MAX_VALUE) {
-                    continue;
-                }
                 if(distance[node.value] + neighbour.weight < distance[neighbour.value]) {
                     distance[neighbour.value] = distance[node.value] + neighbour.weight;
                     pq.offer(new Pair(neighbour.value, distance[neighbour.value]));
