@@ -24,7 +24,10 @@ class Solution {
                     current[to] = previous[from] + price;
                 }
             }
-            previous = current.clone();
+            // copying the data of current array to the previous array
+            for(int j=0; j<current.length; j++) {
+                previous[j] = current[j];
+            }
         }
         
         if(previous[dst] == Integer.MAX_VALUE) {
