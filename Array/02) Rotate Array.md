@@ -10,7 +10,7 @@ public class Solution{
         if(k == 0) return;
         
         int[] arr = new int[length];
-        for(int i=0; i<k; i++) {
+        for(int i=0; i<length; i++) {
             arr[i] = nums[i];
         }
         for(int i=0; i<length; i++) {
