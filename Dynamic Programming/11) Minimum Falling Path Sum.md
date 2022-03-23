@@ -26,7 +26,7 @@ class Solution {
     }
 }
 ```         
-> `Recurrence Realtion` : **T(N) = 3(T(N-1)+C)**     
+> `Recurrence Realtion` : **T(N) = 3(T(N-1))+C**     
 > `Time Complexity` : **O(N\*3<sup>(N)</sup>)**          
 > `Space Complexity` : **O(N)**    
 ---
