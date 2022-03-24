@@ -4,9 +4,9 @@ Question -> [Subset Sum Equal To K](https://www.codingninjas.com/codestudio/prob
 ### Recursion
 ```java
 public class Solution {
-	public static boolean subsetSumToK(int n, int k, int[] arr){
-		return subsetSum(n-1, k, arr);
-	}
+    public static boolean subsetSumToK(int n, int k, int[] arr){
+	return subsetSum(n-1, k, arr);
+    }
     public static boolean subsetSum(int index, int target, int[] arr) {
         if(target < 0) return false;
         if(target == 0) return true;
@@ -50,7 +50,7 @@ public class Solution {
 ### Tabulation
 ```java
 public class Solution {
-	  public static boolean subsetSumToK(int n, int k, int[] arr) {
+    public static boolean subsetSumToK(int n, int k, int[] arr) {
         boolean[][] dp = new boolean[n][k+1];
         // base case
         // for target = 0 at any index
@@ -71,7 +71,7 @@ public class Solution {
             }
         }
         return dp[n-1][k];
-	  }
+    }
 }
 ```
 > `Time Complexity` : **O(N\*K)**          
@@ -80,7 +80,7 @@ public class Solution {
 ### Tabulation with Space Optimization
 ```java
 public class Solution {
-	  public static boolean subsetSumToK(int n, int k, int[] arr) {
+    public static boolean subsetSumToK(int n, int k, int[] arr) {
         boolean[] prev = new boolean[k+1];
         // for target = 0 at any index
         prev[0] = true;
@@ -101,7 +101,7 @@ public class Solution {
             prev = curr;
         }
         return prev[k];
-	  }
+    }
 }
 ```
 > `Time Complexity` : **O(N\*K)**          
