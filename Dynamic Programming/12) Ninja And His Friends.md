@@ -73,17 +73,97 @@ public class Solution {
 ---
 ### Tabulation
 ```java
-
+import java.util.*;
+public class Solution {
+	public static int maximumChocolates(int r, int c, int[][] grid) {
+        int[][][] dp = new int[r][c][c];
+        //base cases
+        for(int aliceCol=0; aliceCol<c; aliceCol++) {
+            for(int bobCol=0; bobCol<c; bobCol++) {
+                if(aliceCol==bobCol) {
+                    dp[r-1][aliceCol][bobCol] = grid[r-1][aliceCol];
+                } else {
+                    // add cells of both alice and bob
+                    dp[r-1][aliceCol][bobCol] = grid[r-1][aliceCol] + grid[r-1][bobCol];
+                }
+            }
+        }
+        
+        for(int row=r-2; row>=0; row--) {
+            for(int aliceCol=0; aliceCol<c; aliceCol++) {
+                for(int bobCol=0; bobCol<c; bobCol++) {
+                    int max = Integer.MIN_VALUE;
+                    for(int i=-1; i<=1; i++) {
+                        for(int j=-1; j<=1; j++) {
+                            int aliceNewCol = aliceCol+i;
+                            int bobNewCol = bobCol+j;
+                            if(aliceNewCol<0 || aliceNewCol>=c || bobNewCol<0 || bobNewCol>=c) continue;
+                            max = Math.max(max, dp[row+1][aliceNewCol][bobNewCol]);
+                        }
+                    }
+                    if(aliceCol == bobCol) {
+                        max += grid[row][bobCol];
+                    } else {
+                        max += grid[row][aliceCol] + grid[row][bobCol];
+                    }
+                    dp[row][aliceCol][bobCol] = max;
+                }
+            }
+        }
+        return dp[0][0][c-1];
+    }
+}
 ```
-> `Time Complexity` : **O(N\*N)**          
-> `Space Complexity` : **O(N\*N)**
+> `Time Complexity` : **O(M\*N\*N)\*9**, M = Number of Rows, N = Number of Columns          
+> `Space Complexity` : **O(M\*N\*N)**, for dp array
 ---
 ### Tabulation with Space Optimization
 ```java
-
+import java.util.*;
+public class Solution {
+	public static int maximumChocolates(int r, int c, int[][] grid) {
+        int[][] prev = new int[c][c];
+        //base cases
+        for(int aliceCol=0; aliceCol<c; aliceCol++) {
+            for(int bobCol=0; bobCol<c; bobCol++) {
+                if(aliceCol==bobCol) {
+                    prev[aliceCol][bobCol] = grid[r-1][aliceCol];
+                } else {
+                    // add cells of both alice and bob
+                    prev[aliceCol][bobCol] = grid[r-1][aliceCol] + grid[r-1][bobCol];
+                }
+            }
+        }
+        
+        for(int row=r-2; row>=0; row--) {
+            int[][] curr = new int[c][c];
+            for(int aliceCol=0; aliceCol<c; aliceCol++) {
+                for(int bobCol=0; bobCol<c; bobCol++) {
+                    int max = Integer.MIN_VALUE;
+                    for(int i=-1; i<=1; i++) {
+                        for(int j=-1; j<=1; j++) {
+                            int aliceNewCol = aliceCol+i;
+                            int bobNewCol = bobCol+j;
+                            if(aliceNewCol<0 || aliceNewCol>=c || bobNewCol<0 || bobNewCol>=c) continue;
+                            max = Math.max(max, prev[aliceNewCol][bobNewCol]);
+                        }
+                    }
+                    if(aliceCol == bobCol) {
+                        max += grid[row][bobCol];
+                    } else {
+                        max += grid[row][aliceCol] + grid[row][bobCol];
+                    }
+                    curr[aliceCol][bobCol] = max;
+                }
+            }
+            prev = curr;
+        }
+        return prev[0][c-1];
+    }
+}
 ```
-> `Time Complexity` : **O(N\*N)**          
-> `Space Complexity` : **O(N)+O(N)**, for prev and curr arrays.
+> `Time Complexity` : **O(M\*N\*N)\*9**, M = Number of Rows, N = Number of Columns          
+> `Space Complexity` : **O(N\*N) + O(N\*N)**, for prev and curr arrays.
 ---
 Video Explanations -> [Ninja And His Friends](https://youtu.be/QGfn7JeXK54?list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY)   
 <hr>
