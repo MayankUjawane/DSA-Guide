@@ -1,33 +1,21 @@
 # Search In A Sorted 2D Array
-Question -> [Search In A Sorted 2D Array](https://nados.io/question/search-in-a-sorted-2d-array?zen=true)    
+Question -> [Search In A Sorted 2D Array](https://leetcode.com/problems/search-a-2d-matrix/)    
 
 ### Implementation
 ```java
-public class Main {
-    public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[][] arr = new int[n][n];
-        for(int i=0; i<n; i++) {
-            for(int j=0; j<n; j++) {
-                arr[i][j] = sc.nextInt();
-            }
-        }
-        int number = sc.nextInt();
-
-        int maxc = n-1;
-        for(int r=0; r<n; r++) {
-            if(number > arr[r][maxc]) continue;
-            for(int c=0; c<n; c++) {
-                if(number == arr[r][c]) {
-                    System.out.println(r);
-                    System.out.println(c);
-                    return;
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        int row = matrix.length;
+        int col = matrix[0].length; 
+        for(int r=0; r<row; r++) {
+            if(matrix[r][col-1] >= target) {
+                for(int c=col-1; c>=0; c--) {
+                    if(matrix[r][c] == target) return true;
                 }
+                break;
             }
-            break;
         }
-        System.out.println("Not Found");
+        return false;
     }
 }
 ```
