@@ -21,7 +21,7 @@ class Solution {
 > `Time Complexity` : **O(2<sup>M</sup>\*2<sup>N</sup>)**, where M = Length of string1 and N = Length of string2          
 > `Space Complexity` : **O(M+N)**    
 ---
-### Memorization
+### Memoization
 ```java
 class Solution {
     public int longestCommonSubsequence(String text1, String text2) {
@@ -36,7 +36,7 @@ class Solution {
         
         if(dp[index1][index2] != -1) return dp[index1][index2];
         // when both strings have same characters at particular indexes then move to the next idexes
-        if(text1.charAt(index1) == text2.charAt(index2)) return (1 + lcs(index1-1, text1, index2-1, text2, dp));
+        if(text1.charAt(index1) == text2.charAt(index2)) return dp[index1][index2] = (1 + lcs(index1-1, text1, index2-1, text2, dp));
         // when strings have different characters then give chance to both the strings to match with next indexes
         return dp[index1][index2] = Math.max(lcs(index1-1, text1, index2, text2, dp),lcs(index1, text1, index2-1, text2, dp));
     }
@@ -45,7 +45,7 @@ class Solution {
 > `Time Complexity` : **O(M\*N)**           
 > `Space Complexity` : **O(M+N)+O(M\*N)**, for Recursion Stack and dp array
 ---
-### Memorization with Index Shifting
+### Memoization with Index Shifting
 ```java
 class Solution {
     public int longestCommonSubsequence(String text1, String text2) {
@@ -61,7 +61,7 @@ class Solution {
         
         if(dp[index1][index2] != -1) return dp[index1][index2];
         // when both strings have same characters at particular indexes then move to the next idexes
-        if(text1.charAt(index1-1) == text2.charAt(index2-1)) return (1 + lcs(index1-1, text1, index2-1, text2, dp));
+        if(text1.charAt(index1-1) == text2.charAt(index2-1)) return dp[index1][index2] = (1 + lcs(index1-1, text1, index2-1, text2, dp));
         // when strings have different characters then give chance to both the strings to match with next indexes
         return dp[index1][index2] = Math.max(lcs(index1-1, text1, index2, text2, dp),lcs(index1, text1, index2-1, text2, dp));
     }
