@@ -23,7 +23,7 @@ public class Solution {
     }
 }
 ```
-> `Time Complexity` : **O(n)**     
+> `Time Complexity` : **O(NlogN)**     
 > `Space Complexity` : **O(1)**
 ---
 Video Explanations -> [Target Sum Pair](https://youtu.be/4t9jv9AkVdE?list=PL-Jc9J83PIiFc7hJ5eeCb579PS8p-en4f)   
