@@ -24,7 +24,7 @@ class Solution {
 > `Time Complexity` : **O(2<sup>(M*N)</sup>)**          
 > `Space Complexity` : **O(Path Length)**, maximun path length can be **(m-1)+(n-1)**, so S.C.-> **O((M-1)+(N-1))**
 ---
-### Memorization
+### Memoization
 ```java
 class Solution {
     public int minPathSum(int[][] grid) {
@@ -76,7 +76,7 @@ class Solution {
 > `Time Complexity` : **O(M\*N)**          
 > `Space Complexity` : **O(M\*N)**
 ---
-### Tabulation with Space Optimization
+### Tabulation using Two Arrays
 ```java
 class Solution {
     public int minPathSum(int[][] grid) {
@@ -104,6 +104,33 @@ class Solution {
 ```
 > `Time Complexity` : **O(M\*N)**          
 > `Space Complexity` : **O(N)+O(N)**, for prev and curr arrays.
+---
+### Tabulation using One Array
+```java
+class Solution {
+    public int minPathSum(int[][] grid) {
+        int row = grid.length;
+        int col = grid[0].length;
+        int[] dp = new int[col];
+        
+        for(int r=0; r<row; r++) {
+            for(int c=0; c<col; c++) {
+                if(r==0 && c==0) {
+                    dp[0] = grid[0][0];
+                    continue;
+                }
+                int up=Integer.MAX_VALUE, left=Integer.MAX_VALUE; 
+                if(r-1 >= 0) up = grid[r][c] + dp[c];
+                if(c-1 >= 0) left = grid[r][c] + dp[c-1];
+                dp[c] = Math.min(up,left);
+            }
+        }
+        return dp[col-1];
+    }
+}
+```
+> `Time Complexity` : **O(M\*N)**          
+> `Space Complexity` : **O(N)**, for dp array.
 ---
 Video Explanations -> [Minimum Path Sum](https://youtu.be/_rgTlyky1uQ?list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY)   
 <hr>
