@@ -20,7 +20,7 @@ class Solution {
 > `Time Complexity` : **O(2<sup>(M*N)</sup>)**          
 > `Space Complexity` : **O(Path Length)**, maximun path length can be (m-1)+(n-1)
 ---
-### Memorization
+### Memoization
 ```java
 class Solution {
     public int uniquePaths(int m, int n) {
@@ -93,6 +93,30 @@ class Solution {
 ```
 > `Time Complexity` : **O(M\*N)**          
 > `Space Complexity` : **O(N)+O(N)**, for prev and curr arrays.
+---
+### Tabulation with One Array
+```java
+class Solution {
+    public int uniquePaths(int m, int n) {
+        int[] dp = new int[n];
+        for(int row=0; row<m; row++) {
+            for(int col=0; col<n; col++) {
+                if(row==0 && col==0) {
+                    dp[col] = 1;
+                    continue;
+                }
+                int up=0, left=0;
+                if(row-1 >= 0) up = dp[col];
+                if(col-1 >= 0) left = dp[col-1];
+                dp[col] = up+left;
+            }
+        }
+        return dp[n-1];
+    }
+}
+```
+> `Time Complexity` : **O(M\*N)**          
+> `Space Complexity` : **O(N)**, for dp array.
 ---
 Video Explanations -> [Unique Paths](https://youtu.be/sdE0A2Oxofw?list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY)   
 <hr>
