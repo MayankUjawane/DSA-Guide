@@ -22,7 +22,7 @@ public class Solution {
 > `Time Complexity` : **O(2<sup>(N)</sup>)**          
 > `Space Complexity` : **O(N)**    
 ---
-### Memorization
+### Memoization
 ```java
 public class Solution {
     public static boolean subsetSumToK(int n, int k, int[] arr) {
