@@ -20,7 +20,7 @@ class Solution {
 > `Time Complexity` : **O(2<sup>(N*N)</sup>)**, where N = Length of last row          
 > `Space Complexity` : **O(N)**, where N = Height of Triangle
 ---
-### Memorization
+### Memoization
 ```java
 class Solution {
     public int minimumTotal(List<List<Integer>> triangle) {
@@ -57,7 +57,7 @@ class Solution {
         }
         for(int row=r-2; row>=0; row--) {
             for(int col=row; col>=0; col--) {
-                int up = triangle.get(row).get(col) + dp[row+1][col];
+                int down = triangle.get(row).get(col) + dp[row+1][col];
                 int diagonal = triangle.get(row).get(col) + dp[row+1][col+1];
                 dp[row][col] = Math.min(up,diagonal);
             }
@@ -75,21 +75,21 @@ class Solution {
     public int minimumTotal(List<List<Integer>> triangle) {
         int r = triangle.size();
         int c = triangle.get(r-1).size();
-        int[] prev = new int[c];
+        int[] front = new int[c];
         // base case
         for(int col=0; col<c; col++) {
-            prev[col] = triangle.get(r-1).get(col);
+            front[col] = triangle.get(r-1).get(col);
         }
         for(int row=r-2; row>=0; row--) {
             int[] curr = new int[row+1];
             for(int col=row; col>=0; col--) {
-                int up = triangle.get(row).get(col) + prev[col];
-                int diagonal = triangle.get(row).get(col) + prev[col+1];
+                int down = triangle.get(row).get(col) + front[col];
+                int diagonal = triangle.get(row).get(col) + front[col+1];
                 curr[col] = Math.min(up,diagonal);
             }
-            prev = curr;
+            front = curr;
         }
-        return prev[0];
+        return front[0];
     }
 }
 ```
