@@ -17,7 +17,7 @@ class Main {
 > `Time Complexity` : **O(2<sup>N</sup>)**          
 > `Space Complexity` : **O(N)**
 ---
-### Memorization
+### Memoization
 ```java
 class Main {
     public int fib(int n) {
