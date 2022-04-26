@@ -30,7 +30,7 @@ class Solution {
 > `Time Complexity` : **O(2<sup>(N)</sup>)+O(N)**          
 > `Space Complexity` : **O(N)**    
 ---
-### Memorization
+### Memoization
 ```java
 class Solution {
     public boolean canPartition(int[] nums) {
