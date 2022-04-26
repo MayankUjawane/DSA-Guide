@@ -30,7 +30,7 @@ class Solution {
 > `Time Complexity` : **O(N\*3<sup>(N)</sup>)**          
 > `Space Complexity` : **O(N)**    
 ---
-### Memorization
+### Memoization
 ```java
 class Solution {
     public int minFallingPathSum(int[][] matrix) {
