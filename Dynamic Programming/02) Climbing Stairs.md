@@ -14,7 +14,7 @@ class Solution {
 > `Time Complexity` : **O(2<sup>N</sup>)**          
 > `Space Complexity` : **O(N)**
 ---
-### Memorization
+### Memoization
 ```java
 class Solution {
     public int climbStairs(int n) {
