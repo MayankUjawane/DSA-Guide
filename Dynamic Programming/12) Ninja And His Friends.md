@@ -30,10 +30,10 @@ public class Solution {
     }
 }
 ```         
-> `Time Complexity` : **O(3<sup>N</sup>\*3<sup>N</sup>)**          
+> `Time Complexity` : **O(3<sup>N</sup>\*3<sup>N</sup>)**, N = number of rows          
 > `Space Complexity` : **O(N)**    
 ---
-### Memorization
+### Memoization
 ```java
 import java.util.*;
 public class Solution {
