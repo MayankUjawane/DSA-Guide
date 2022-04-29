@@ -23,7 +23,7 @@ public class Solution {
 > `Time Complexity` : **Exponential**          
 > `Space Complexity` : **O(W)**    
 ---
-### Memorization
+### Memoization
 ```java
 import java.util.*;
 public class Solution {
