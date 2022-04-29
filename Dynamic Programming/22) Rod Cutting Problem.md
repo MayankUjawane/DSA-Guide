@@ -25,7 +25,7 @@ public class Solution {
 > `Time Complexity` : **Exponential**          
 > `Space Complexity` : **O(N)**, N = Length of Rod    
 ---
-### Memorization
+### Memoization
 ```java
 import java.util.*;
 public class Solution {
