@@ -23,7 +23,7 @@ class Solution {
 > `Time Complexity` : **Exponential**          
 > `Space Complexity` : **O(Amount)**    
 ---
-### Memorization
+### Memoization
 ```java
 class Solution {
     public int change(int amount, int[] coins) {
