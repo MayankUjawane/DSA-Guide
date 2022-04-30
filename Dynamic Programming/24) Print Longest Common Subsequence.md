@@ -53,7 +53,7 @@ class Main {
         int i=m, j=n;
         while(i>0 && j>0) {
             if(text1.charAt(i-1) == text2.charAt(j-1)) {
-                sb.insert(0, text2.charAt(j-1));
+                sb.append(text2.charAt(j-1));
                 i--;
                 j--;
             } else {
@@ -64,7 +64,7 @@ class Main {
                 }
             }
         }
-        System.out.println(sb.toString());
+        System.out.println(sb.reverse().toString());
     }
 }
 ```
