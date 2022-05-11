@@ -22,9 +22,9 @@ class Solution {
         if((s.charAt(i) == p.charAt(j)) || (p.charAt(j) == '?')) {
             return isMatch(i-1, s, j-1, p);
         } else if(p.charAt(j) == '*') {
-            boolean consider = isMatch(i, s, j-1, p); 
-            boolean notConsider = isMatch(i-1, s, j, p); // considering * as empty character
-            return (consider || notConsider);
+            boolean empty = isMatch(i, s, j-1, p); // considering * as empty character
+            boolean notEmpty = isMatch(i-1, s, j, p); // considering * equivalent to ith character of string s
+            return (empty || notEmpty);
         } else {
             return false;
         }
@@ -59,9 +59,9 @@ class Solution {
         if((s.charAt(i) == p.charAt(j)) || (p.charAt(j) == '?')) {
             ans = isMatch(i-1, s, j-1, p, dp);
         } else if(p.charAt(j) == '*') {
-            boolean consider = isMatch(i, s, j-1, p, dp); 
-            boolean notConsider = isMatch(i-1, s, j, p, dp); // considering * as empty character
-            ans = (consider || notConsider);
+            boolean empty = isMatch(i, s, j-1, p, dp); // considering * as empty character
+            boolean notEmpty = isMatch(i-1, s, j, p, dp); // considering * equivalent to ith character of string s
+            return (empty || notEmpty);
         }
         
         if(ans == false) {
@@ -101,9 +101,9 @@ class Solution {
         if((s.charAt(i-1) == p.charAt(j-1)) || (p.charAt(j-1) == '?')) {
             ans = isMatch(i-1, s, j-1, p, dp);
         } else if(p.charAt(j-1) == '*') {
-            boolean consider = isMatch(i, s, j-1, p, dp); 
-            boolean notConsider = isMatch(i-1, s, j, p, dp); // considering * as empty character
-            ans = (consider || notConsider);
+            boolean empty = isMatch(i, s, j-1, p, dp); // considering * as empty character
+            boolean notEmpty = isMatch(i-1, s, j, p, dp); // considering * equivalent to (i-1) character of string s
+            return (empty || notEmpty);
         }
         
         if(ans == false) {
@@ -142,9 +142,9 @@ class Solution {
                 if((s.charAt(i-1) == p.charAt(j-1)) || (p.charAt(j-1) == '?')) {
                     ans = dp[i-1][j-1];
                 } else if(p.charAt(j-1) == '*') {
-                    boolean consider = dp[i][j-1]; 
-                    boolean notConsider = dp[i-1][j]; // considering * as empty character
-                    ans = (consider || notConsider);
+                    boolean empty = dp[i][j-1]; // considering * as empty character
+                    boolean notEmpty = dp[i-1][j]; 
+                    ans = (empty || notEmpty);
                 }
                 dp[i][j] = ans;
             }
@@ -181,9 +181,9 @@ class Solution {
                 if((s.charAt(i-1) == p.charAt(j-1)) || (p.charAt(j-1) == '?')) {
                     ans = prev[j-1];
                 } else if(p.charAt(j-1) == '*') {
-                    boolean consider = curr[j-1]; 
-                    boolean notConsider = prev[j]; // considering * as empty character
-                    ans = (consider || notConsider);
+                    boolean empty = curr[j-1]; // considering * as empty character
+                    boolean notEmpty = prev[j];
+                    ans = (empty || notEmpty);
                 }
                 curr[j] = ans;
             }
