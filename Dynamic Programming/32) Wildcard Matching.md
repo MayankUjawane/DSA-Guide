@@ -61,7 +61,7 @@ class Solution {
         } else if(p.charAt(j) == '*') {
             boolean empty = isMatch(i, s, j-1, p, dp); // considering * as empty character
             boolean notEmpty = isMatch(i-1, s, j, p, dp); // considering * equivalent to ith character of string s
-            return (empty || notEmpty);
+            ans = (empty || notEmpty);
         }
         
         if(ans == false) {
@@ -103,7 +103,7 @@ class Solution {
         } else if(p.charAt(j-1) == '*') {
             boolean empty = isMatch(i, s, j-1, p, dp); // considering * as empty character
             boolean notEmpty = isMatch(i-1, s, j, p, dp); // considering * equivalent to (i-1) character of string s
-            return (empty || notEmpty);
+            ans = (empty || notEmpty);
         }
         
         if(ans == false) {
