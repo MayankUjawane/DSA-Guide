@@ -227,7 +227,7 @@ class Solution {
     }
 }
 ```
-> `Time Complexity` : **OO(N\*4)**           
+> `Time Complexity` : **O(N\*4)**           
 > `Space Complexity` : **O(5)+O(5)**, for front and curr arrays.
 ---
 Video Explanations -> [Best Time to Buy and Sell Stock III](https://youtu.be/-uQGzhYj8BQ?list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY)   
