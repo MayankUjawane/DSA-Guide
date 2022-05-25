@@ -77,10 +77,31 @@ class Solution {
 ---
 ### Tabulation with Space Optimization
 ```java
-
+class Solution {
+    public int lengthOfLIS(int[] nums) {
+        int n = nums.length;
+        int[] front = new int[n+1];
+        // base case
+        for(int i=0; i<=n; i++) front[i] = 0;
+        
+        for(int index=n-1; index>=0; index--) {
+            int[] curr = new int[n+1];
+            for(int prevIndex=index-1; prevIndex>=-1; prevIndex--) {
+                int notTake = front[prevIndex+1];
+                int take = 0;
+                if(prevIndex == -1 || nums[index]>nums[prevIndex]) take = 1 + front[index+1];
+                
+                curr[prevIndex+1] = Math.max(take,notTake);
+            }
+            front = curr;
+        }
+        
+        return front[0];
+    }
+}
 ```
-> `Time Complexity` : **O(M\*N)**           
-> `Space Complexity` : **O(N)+O(N)**, for prev and curr arrays.
+> `Time Complexity` : **O(N\*N)**           
+> `Space Complexity` : **O(N)+O(N)**, for front and curr arrays.
 ---
 Video Explanations -> [Longest Increasing Subsequence](https://youtu.be/ekcwMsSIzVc?list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY)   
 <hr>
