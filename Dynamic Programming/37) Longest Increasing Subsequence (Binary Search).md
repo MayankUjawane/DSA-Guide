@@ -51,10 +51,10 @@ class Solution {
             int index;
             if(curr>arr[maxLength-1]) {
                 index = maxLength;
+                maxLength++;
             } else {
                 index = binarySearch(arr, 0, maxLength, curr);
             }
-            if(index==maxLength) maxLength++;
             arr[index] = curr;
         }
         return maxLength;
