@@ -53,5 +53,5 @@ class Solution {
 > `Time Complexity` : **O(N\*N)**           
 > `Space Complexity` : **O(N)**, for dp array
 ---
-Video Explanations -> [Minimum Number of Removals to Make Mountain Array](https://youtu.be/cKVl1TFdNXg?list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY)   
+Video Explanations -> [Minimum Number of Removals to Make Mountain Array](https://youtu.be/y4vN0WNdrlg?list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY)   
 <hr>
