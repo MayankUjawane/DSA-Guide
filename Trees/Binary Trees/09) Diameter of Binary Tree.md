@@ -18,12 +18,12 @@ class Solution {
     }
     
     public int height(TreeNode root, int[] diameter) {
-        if (root == null) return -1;
+        if (root == null) return 0;
         
         int left = height(root.left, diameter);
         int right = height(root.right, diameter);
         
-        diameter[0] = Math.max(left+right+2, diameter[0]);
+        diameter[0] = Math.max(left+right, diameter[0]);
             
         return Math.max(left, right) + 1;    
     }
