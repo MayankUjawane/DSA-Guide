@@ -1,4 +1,4 @@
-#  Diameter of Binary Tree
+#  Binary Tree Zigzag Level Order Traversal
 Try to solve the question first [Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)    
 
 > **`Hint`**   
